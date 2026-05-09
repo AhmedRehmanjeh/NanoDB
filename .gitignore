@@ -1,0 +1,27 @@
+# Compiled Binaries
+*.exe
+*.o
+*.obj
+build/
+bin/
+
+# Logs
+logs/*.log
+
+# Datasets (TPC-H)
+data/*.tbl
+data/*.csv
+data/nanodb_data.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeLists.txt.user
+Makefile
+cmake_install.cmake
