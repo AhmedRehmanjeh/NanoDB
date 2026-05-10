@@ -13,7 +13,6 @@ NanoDB/
 ├── CMakeLists.txt     # Build Script (CMake)
 ├── Makefile           # Build Script (Make)
 ├── run_tests.bat      # Windows Executable Script
-├── run_tests.sh       # Linux/macOS Executable Script
 └── README.md          # This file
 ```
 
