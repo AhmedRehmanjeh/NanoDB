@@ -70,4 +70,4 @@ The engine generates a highly detailed execution log at `logs/nanodb_execution.l
 - **Indexing**: AVL Tree for O(log N) search.
 
 ---
-**GitHub Repository**: [Public Repo Link Placeholder]
+**GitHub Repository**: [NanoDB - Architecture & Query Optimizer](https://github.com/AhmedRehmanjeh/NanoDB)

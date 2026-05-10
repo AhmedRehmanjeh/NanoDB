@@ -1,0 +1,171 @@
+[LOG] --- Starting Automated Workload (queries.txt) ---
+[LOG] Processing Query [1]: INSERT INTO customer VALUES (1, 'Customer1', 'Address1', 1, '123-456', 5000.0, 'BUILDING', 'Comment1');
+[LOG] Processing Query [2]: INSERT INTO orders VALUES (1, 1, 'O', 1000.0, '2026-05-09', 'High', 'Clerk1', 1, 'Comment1');
+[LOG] Processing Query [3]: INSERT INTO lineitem VALUES (1, 1, 1, 1, 10, 100.0, 0.1, 0.05, 'R', 'F', '2026-05-10', '2026-05-11', '2026-05-12', 'Deliver', 'Ship', 'Comment1');
+[LOG] Processing Query [4]: SELECT * FROM customer WHERE c_custkey == 1;
+[LOG] Infix "c_custkey == 1" converted to Postfix "c_custkey 1 == "
+[LOG] Processing Query [5]: SELECT * FROM orders WHERE o_custkey == 1;
+[LOG] Infix "o_custkey == 1" converted to Postfix "o_custkey 1 == "
+[LOG] Processing Query [6]: SELECT * FROM lineitem WHERE l_orderkey == 1;
+[LOG] Infix "l_orderkey == 1" converted to Postfix "l_orderkey 1 == "
+[LOG] Processing Query [7]: SELECT c_name FROM customer WHERE c_acctbal > 1000;
+[LOG] Infix "c_acctbal > 1000" converted to Postfix "c_acctbal 1000 > "
+[LOG] Processing Query [8]: SELECT o_totalprice FROM orders WHERE o_orderstatus == 'O';
+[LOG] Infix "o_orderstatus == 'O'" converted to Postfix "o_orderstatus 'O' == "
+[LOG] Processing Query [9]: SELECT * FROM customer JOIN orders ON c_custkey == o_custkey;
+[LOG] Processing Query [10]: SELECT * FROM orders JOIN lineitem ON o_orderkey == l_orderkey;
+[LOG] Processing Query [11]: SELECT * FROM customer JOIN orders JOIN lineitem;
+[LOG] Processing Query [12]: SELECT c_name FROM customer WHERE c_mktsegment == 'BUILDING';
+[LOG] Infix "c_mktsegment == 'BUILDING'" converted to Postfix "c_mktsegment 'BUILDING' == "
+[LOG] Processing Query [13]: UPDATE customer SET c_acctbal = 6000.0 WHERE c_custkey == 1;
+[LOG] Infix "c_custkey == 1" converted to Postfix "c_custkey 1 == "
+[LOG] Processing Query [14]: SELECT c_acctbal FROM customer WHERE c_custkey == 1;
+[LOG] Infix "c_custkey == 1" converted to Postfix "c_custkey 1 == "
+[LOG] Processing Query [15]: DELETE FROM customer WHERE c_custkey == 2;
+[LOG] Infix "c_custkey == 2" converted to Postfix "c_custkey 2 == "
+[LOG] Processing Query [16]: INSERT INTO customer VALUES (2, 'Customer2', 'Address2', 2, '222-222', 12000.0, 'HOUSE', 'Comment2');
+[LOG] Processing Query [17]: SELECT * FROM customer WHERE c_acctbal > 10000;
+[LOG] Infix "c_acctbal > 10000" converted to Postfix "c_acctbal 10000 > "
+[LOG] Processing Query [18]: SELECT o_orderstatus FROM orders WHERE o_totalprice < 5000;
+[LOG] Infix "o_totalprice < 5000" converted to Postfix "o_totalprice 5000 < "
+[LOG] Processing Query [19]: SELECT * FROM customer WHERE c_nationkey == 15;
+[LOG] Infix "c_nationkey == 15" converted to Postfix "c_nationkey 15 == "
+[LOG] Processing Query [20]: SELECT * FROM orders WHERE o_orderpriority == 'High';
+[LOG] Infix "o_orderpriority == 'High'" converted to Postfix "o_orderpriority 'High' == "
+[LOG] Processing Query [21]: SELECT * FROM lineitem WHERE l_quantity > 50;
+[LOG] Infix "l_quantity > 50" converted to Postfix "l_quantity 50 > "
+[LOG] Processing Query [22]: SELECT * FROM customer WHERE c_name == 'Customer1';
+[LOG] Infix "c_name == 'Customer1'" converted to Postfix "c_name 'Customer1' == "
+[LOG] Processing Query [23]: SELECT * FROM customer WHERE (c_acctbal > 5000 AND c_mktsegment == 'BUILDING') OR c_nationkey == 15;
+[LOG] Infix "(c_acctbal > 5000 AND c_mktsegment == 'BUILDING') OR c_nationkey == 15" converted to Postfix "(c_acctbal 5000 > c_mktsegment 'BUILDING') == AND c_nationkey 15 == OR "
+[LOG] Processing Query [24]: SELECT * FROM orders WHERE (o_totalprice * 1.5) > 100000;
+[LOG] Infix "(o_totalprice * 1.5) > 100000" converted to Postfix "(o_totalprice 1.5) * 100000 > "
+[LOG] Processing Query [25]: SELECT * FROM lineitem WHERE l_discount > 0.05;
+[LOG] Infix "l_discount > 0.05" converted to Postfix "l_discount 0.05 > "
+[LOG] Processing Query [26]: SELECT * FROM customer WHERE c_phone == '123-456';
+[LOG] Infix "c_phone == '123-456'" converted to Postfix "c_phone '123-456' == "
+[LOG] Processing Query [27]: SELECT * FROM orders WHERE o_orderdate == '2026-05-09';
+[LOG] Infix "o_orderdate == '2026-05-09'" converted to Postfix "o_orderdate '2026-05-09' == "
+[LOG] Processing Query [28]: SELECT * FROM lineitem WHERE l_shipmode == 'Ship';
+[LOG] Infix "l_shipmode == 'Ship'" converted to Postfix "l_shipmode 'Ship' == "
+[LOG] Processing Query [29]: SELECT * FROM customer WHERE c_comment == 'Comment1';
+[LOG] Infix "c_comment == 'Comment1'" converted to Postfix "c_comment 'Comment1' == "
+[LOG] Processing Query [30]: SELECT * FROM orders WHERE o_clerk == 'Clerk1';
+[LOG] Infix "o_clerk == 'Clerk1'" converted to Postfix "o_clerk 'Clerk1' == "
+[LOG] Processing Query [31]: SELECT * FROM lineitem WHERE l_linestatus == 'F';
+[LOG] Infix "l_linestatus == 'F'" converted to Postfix "l_linestatus 'F' == "
+[LOG] Processing Query [32]: SELECT * FROM customer JOIN orders ON c_custkey == o_custkey WHERE c_acctbal > 5000;
+[LOG] Infix "c_acctbal > 5000" converted to Postfix "c_acctbal 5000 > "
+[LOG] Processing Query [33]: SELECT * FROM orders JOIN lineitem ON o_orderkey == l_orderkey WHERE o_totalprice > 1000;
+[LOG] Infix "o_totalprice > 1000" converted to Postfix "o_totalprice 1000 > "
+[LOG] Processing Query [34]: SELECT c_name, o_totalprice FROM customer JOIN orders ON c_custkey == o_custkey;
+[LOG] Processing Query [35]: SELECT * FROM customer WHERE c_custkey < 100;
+[LOG] Infix "c_custkey < 100" converted to Postfix "c_custkey 100 < "
+[LOG] Processing Query [36]: SELECT * FROM orders WHERE o_orderkey < 100;
+[LOG] Infix "o_orderkey < 100" converted to Postfix "o_orderkey 100 < "
+[LOG] Processing Query [37]: SELECT * FROM lineitem WHERE l_linenumber == 1;
+[LOG] Infix "l_linenumber == 1" converted to Postfix "l_linenumber 1 == "
+[LOG] Processing Query [38]: SELECT * FROM customer WHERE c_acctbal < 0;
+[LOG] Infix "c_acctbal < 0" converted to Postfix "c_acctbal 0 < "
+[LOG] Processing Query [39]: SELECT * FROM orders WHERE o_orderstatus != 'F';
+[LOG] Infix "o_orderstatus != 'F'" converted to Postfix "o_orderstatus 'F' != "
+[LOG] Processing Query [40]: SELECT * FROM lineitem WHERE l_extendedprice > 500;
+[LOG] Infix "l_extendedprice > 500" converted to Postfix "l_extendedprice 500 > "
+[LOG] Processing Query [41]: SELECT * FROM customer WHERE c_mktsegment != 'HOUSE';
+[LOG] Infix "c_mktsegment != 'HOUSE'" converted to Postfix "c_mktsegment 'HOUSE' != "
+[LOG] Processing Query [42]: SELECT * FROM orders WHERE o_shippriority == 1;
+[LOG] Infix "o_shippriority == 1" converted to Postfix "o_shippriority 1 == "
+[LOG] Processing Query [43]: SELECT * FROM lineitem WHERE l_tax < 0.02;
+[LOG] Infix "l_tax < 0.02" converted to Postfix "l_tax 0.02 < "
+[LOG] Processing Query [44]: SELECT * FROM customer WHERE c_nationkey == 1;
+[LOG] Infix "c_nationkey == 1" converted to Postfix "c_nationkey 1 == "
+[LOG] Processing Query [45]: SELECT * FROM orders WHERE o_custkey == 2;
+[LOG] Infix "o_custkey == 2" converted to Postfix "o_custkey 2 == "
+[LOG] Processing Query [46]: SELECT * FROM lineitem WHERE l_partkey == 1;
+[LOG] Infix "l_partkey == 1" converted to Postfix "l_partkey 1 == "
+[LOG] Processing Query [47]: SELECT * FROM customer WHERE c_address == 'Address1';
+[LOG] Infix "c_address == 'Address1'" converted to Postfix "c_address 'Address1' == "
+[LOG] Processing Query [48]: SELECT * FROM orders WHERE o_orderpriority == 'Urgent';
+[LOG] Infix "o_orderpriority == 'Urgent'" converted to Postfix "o_orderpriority 'Urgent' == "
+[LOG] Processing Query [49]: SELECT * FROM lineitem WHERE l_returnflag == 'A';
+[LOG] Infix "l_returnflag == 'A'" converted to Postfix "l_returnflag 'A' == "
+[LOG] Processing Query [50]: SELECT * FROM customer WHERE c_acctbal == 5000.0;
+[LOG] Infix "c_acctbal == 5000.0" converted to Postfix "c_acctbal 5000.0 == "
+[LOG] --- Workload Completed: 50 queries processed ---
+[LOG] Running Test Case A: Parser & Evaluator
+[LOG] Infix "c_acctbal > 5000 AND c_mktsegment == BUILDING OR c_nationkey == 15" converted to Postfix "c_acctbal 5000 > c_mktsegment BUILDING == AND c_nationkey 15 == OR "
+[LOG] Running Test Case B: Index Optimizer
+[LOG] Sequential Scan Time (100k records): 0.000000s
+[LOG] AVL Tree Index Time: 0.000000s
+[LOG] Time Reduction: nan%
+[LOG] Running Test Case C: Join Optimizer (MST)
+[LOG] Multi-table join routed via MST: 1 -> 2, 0 -> 1
+[LOG] Running Test Case D: Memory Stress Test
+[LOG] Scanning 5,000 lineitem records (simulated as 100 pages)...
+[LOG] Page 0 evicted via LRU, written to disk.
+[LOG] Page 1 evicted via LRU, written to disk.
+[LOG] Page 2 evicted via LRU, written to disk.
+[LOG] Page 3 evicted via LRU, written to disk.
+[LOG] Page 4 evicted via LRU, written to disk.
+[LOG] Page 5 evicted via LRU, written to disk.
+[LOG] Page 6 evicted via LRU, written to disk.
+[LOG] Page 7 evicted via LRU, written to disk.
+[LOG] Page 8 evicted via LRU, written to disk.
+[LOG] Page 9 evicted via LRU, written to disk.
+[LOG] Page 10 evicted via LRU, written to disk.
+[LOG] Page 11 evicted via LRU, written to disk.
+[LOG] Page 12 evicted via LRU, written to disk.
+[LOG] Page 13 evicted via LRU, written to disk.
+[LOG] Page 14 evicted via LRU, written to disk.
+[LOG] Page 15 evicted via LRU, written to disk.
+[LOG] Page 16 evicted via LRU, written to disk.
+[LOG] Page 17 evicted via LRU, written to disk.
+[LOG] Page 18 evicted via LRU, written to disk.
+[LOG] Page 19 evicted via LRU, written to disk.
+[LOG] Page 20 evicted via LRU, written to disk.
+[LOG] Page 21 evicted via LRU, written to disk.
+[LOG] Page 22 evicted via LRU, written to disk.
+[LOG] Page 23 evicted via LRU, written to disk.
+[LOG] Page 24 evicted via LRU, written to disk.
+[LOG] Page 25 evicted via LRU, written to disk.
+[LOG] Page 26 evicted via LRU, written to disk.
+[LOG] Page 27 evicted via LRU, written to disk.
+[LOG] Page 28 evicted via LRU, written to disk.
+[LOG] Page 29 evicted via LRU, written to disk.
+[LOG] Page 30 evicted via LRU, written to disk.
+[LOG] Page 31 evicted via LRU, written to disk.
+[LOG] Page 32 evicted via LRU, written to disk.
+[LOG] Page 33 evicted via LRU, written to disk.
+[LOG] Page 34 evicted via LRU, written to disk.
+[LOG] Page 35 evicted via LRU, written to disk.
+[LOG] Page 36 evicted via LRU, written to disk.
+[LOG] Page 37 evicted via LRU, written to disk.
+[LOG] Page 38 evicted via LRU, written to disk.
+[LOG] Page 39 evicted via LRU, written to disk.
+[LOG] Page 40 evicted via LRU, written to disk.
+[LOG] Page 41 evicted via LRU, written to disk.
+[LOG] Page 42 evicted via LRU, written to disk.
+[LOG] Page 43 evicted via LRU, written to disk.
+[LOG] Page 44 evicted via LRU, written to disk.
+[LOG] Page 45 evicted via LRU, written to disk.
+[LOG] Page 46 evicted via LRU, written to disk.
+[LOG] Page 47 evicted via LRU, written to disk.
+[LOG] Page 48 evicted via LRU, written to disk.
+[LOG] Page 49 evicted via LRU, written to disk.
+[LOG] Running Test Case E: Priority Queue Concurrency
+[LOG] Submitting 50 standard SELECT queries...
+[LOG] Submitting high-priority admin UPDATE transaction...
+[LOG] Executing queries from Priority Queue:
+[LOG] Executing [10]: UPDATE customer SET balance = 99999 WHERE id = 1
+[LOG] Executing [1]: SELECT * FROM customer WHERE id = 24
+[LOG] Executing [1]: SELECT * FROM customer WHERE id = 49
+[LOG] Executing [1]: SELECT * FROM customer WHERE id = 48
+[LOG] Executing [1]: SELECT * FROM customer WHERE id = 47
+[LOG] Running Test Case F: Deep Expression Tree Edge Case
+[LOG] Infix "( ( o_totalprice * 1.5 ) > 100000 AND ( o_custkey % 2 == 0 ) ) OR ( o_orderstatus != O )" converted to Postfix "o_totalprice 1.5 * 100000 > o_custkey 2 % 0 == AND o_orderstatus O != OR "
+[LOG] Running Test Case G: Durability & Persistence
+[LOG] Inserting 5 new records into customer table (Page 999)...
+[LOG] Serializing pages to disk and terminating...
+[LOG] Engine Rebooted. Verifying records...
+[LOG] Retrieved Records: REC001,REC002,REC003,REC004,REC005
+[LOG] Persistence Check: SUCCESS. Records found on disk.
