@@ -1,6 +1,6 @@
 # NanoDB - Architecture & Query Optimizer
 
-A mini database system built from scratch in C++ for the CS-4002 Applied Programming course at FAST-NUCES.
+A mini database system built from scratch in C++
 
 ## Project Structure
 ```text
